@@ -38,11 +38,11 @@ class duo_unix::yum {
     require  => File['/etc/pki/rpm-gpg/RPM-GPG-KEY-DUO'];
   }
 
-  if $duo_unix::manage_ssh {
-    package { 'openssh-server':
-      ensure => installed;
-    }
-  }
+  # if $duo_unix::manage_ssh {
+  #   package { 'openssh-server':
+  #     ensure => installed;
+  #   }
+  # }
 
   package {  $duo_unix::duo_package:
     ensure  => $package_state,

@@ -33,7 +33,7 @@ class duo_unix::yum {
   yumrepo { 'duosecurity':
     descr    => 'Duo Security Repository',
     baseurl  => "${repo_uri}/${os}/${releasever}/\$basearch",
-    gpgcheck => '0',
+    gpgcheck => '1',
     enabled  => '1',
     require  => File['/etc/pki/rpm-gpg/RPM-GPG-KEY-DUO'];
   }
